@@ -27,6 +27,15 @@ router.post("/login",async(req,res)=>{
     }
 })
 
+router.get("/myProfile",auth,(req,res)=>{
+    try{
+        console.log("just check")
+        res.json(req.user);
+    }catch(e){
+        console.log(e);
+        res.status(400).send(e);
+    }
+})
 
 router.post("/signup",async(req,res)=>{
     try{
