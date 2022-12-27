@@ -1,6 +1,7 @@
 const express = require("express");
 require('./db/mongoose')
 userRoutes=require("./routes/user_routes")
+articleRoutes=require("./routes/article_routes")
 const cors = require("cors");
 const app = express();
 const { db } = require("./models/user");
@@ -10,6 +11,7 @@ var corsOptions = {
 app.use(express.json());
 app.use(cors(corsOptions));
 app.use(userRoutes);
+app.use(articleRoutes);
 
 app.get("/",(req,res)=> res.send("Hii"))
 
