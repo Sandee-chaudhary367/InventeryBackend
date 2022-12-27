@@ -13,7 +13,12 @@ app.use(cors(corsOptions));
 app.use(userRoutes);
 app.use(articleRoutes);
 
+
 app.get("/",(req,res)=> res.send("Hii"))
+
+app.get("/whatapp",(req,res)=> res.send("You Are Awesome"));
+
+
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
