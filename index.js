@@ -15,20 +15,22 @@ app.use(userRoutes);
 app.use(articleRoutes);
 
 
-app.get("/",(req,res)=> res.send("Hii"))
-
-let funff=async()=>{
-  let res=await article.find({}).limit(10);
-  console.log(res);
+app.get("/",async(req,res)=>{
+  try {
+    let ress=await article.find({}).limit(10);
+    console.log(ress);
+    res.json(ress);
+  } catch (e) {
+    console.log(e);
+    res.status(400).send(e);
 }
-
-funff();
+ 
+})
 
 app.get("/whatapp",(req,res)=> res.send("You Are Awesome"));
-
-
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
+
