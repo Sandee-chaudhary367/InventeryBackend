@@ -1,5 +1,5 @@
 require('dotenv').config()
-console.log(process.env)
+
 const express = require("express");
 require('./db/mongoose')
 userRoutes=require("./routes/user_routes")
@@ -20,7 +20,6 @@ app.use(articleRoutes);
 app.get("/",async(req,res)=>{
   try {
     let ress=await article.find({}).limit(10);
-    console.log(ress);
     res.json(ress);
   } catch (e) {
     console.log(e);
