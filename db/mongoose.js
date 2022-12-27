@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-
+require('dotenv').config()
 //setup to connect to the database
-let url=    "mongodb+srv://sandeepchaudhary:NewCommer13@cluster0.abp9usm.mongodb.net/Cluster0?retryWrites=true&w=majority"
+let url= process.env.CONNECT_STRING
 // mongoose.connect('mongodb://127.0.0.1:27017/Inventory2', {
     mongoose.connect(url, {
     useNewUrlParser: true,

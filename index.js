@@ -1,3 +1,5 @@
+require('dotenv').config()
+console.log(process.env)
 const express = require("express");
 require('./db/mongoose')
 userRoutes=require("./routes/user_routes")
@@ -7,7 +9,7 @@ const app = express();
 const { db } = require("./models/user");
 const article = require("./models/article");
 var corsOptions = {
-    origin: "https://spontaneous-mochi-38d67b.netlify.app"
+    origin: process.env.CORS_STRING
 }
 app.use(express.json());
 app.use(cors(corsOptions));
