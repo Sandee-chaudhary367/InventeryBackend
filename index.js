@@ -7,7 +7,7 @@ const app = express();
 const { db } = require("./models/user");
 const article = require("./models/article");
 var corsOptions = {
-    origin: "http://localhost:3000"
+    origin: "https://spontaneous-mochi-38d67b.netlify.app"
 }
 app.use(express.json());
 app.use(cors(corsOptions));
